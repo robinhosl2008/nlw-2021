@@ -1,5 +1,6 @@
+import "reflect-metadata";
 import express from 'express';
-import { LoginController } from '../controllers/LoginController';
+import "./database";
 
 const app = express();
 
@@ -7,8 +8,10 @@ const app = express();
 
 app.get('/', (request, response) => {
     response.send('Estou vivo!');
+});
+
+
+app.listen(3000, () => {
+    console.log('This server is running... 🔥')
 })
 
-//app.get('/', LoginController.index);
-
-export { app };
