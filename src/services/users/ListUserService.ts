@@ -8,9 +8,14 @@ class ListUserService {
 
         let userListed: any;
         if(name) {
-            userListed = await userRepository.findOne({name});
+            userListed = await userRepository
+                .createQueryBuilder("users")
+                .where("users.name like :name", { name: `%${name}%`})
+                .getMany();
         } else {
-            userListed = await userRepository.find();
+            userListed = await userRepository
+                .createQueryBuilder("users")
+                .getMany();
         }
 
         return userListed;

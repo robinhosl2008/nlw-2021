@@ -14,7 +14,7 @@ app.use(router);
 const accessMiddleware = new AccessMiddleware();
 app.use(accessMiddleware.handle);
 
-app.listen(3000, () => {
+app.listen(3030, () => {
     console.log('This server is running... 🔥')
 });
 
