@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import express from 'express';
 import "express-async-errors";
-import { AccessMiddleware } from "./middleware";
+import { AccessMiddleware } from "./middlewares/middleware";
 import { router } from "./routes";
 import "./database";
 
